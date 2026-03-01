@@ -1,22 +1,15 @@
-package EDA.ds;
+package ds;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import adt.List;
 import exceptions.WrongIndexException;
 
-/**
- * Implementación dinámica del TAD Lista utilizando un nodo inicial (Dummy Node).
- * [cite: 88]
- */
 public class ListImpl<E> implements List<E> {
 
     private Node<E> dummy;
     private int size;
 
-    /**
-     * Constructor que inicializa la lista con un Dummy Node.
-     */
     public ListImpl() {
         this.dummy = new Node<>(null, null);
         this.size = 0;
@@ -28,7 +21,7 @@ public class ListImpl<E> implements List<E> {
             throw new WrongIndexException("Posición fuera de rango");
         }
         
-        Node<E> prev = getNodeAt(pos - 1); // El dummy permite que pos 0 tenga un "prev"
+        Node<E> prev = getNodeAt(pos - 1); 
         Node<E> newNode = new Node<>(data, prev.next);
         prev.next = newNode;
         size++;
@@ -68,10 +61,6 @@ public class ListImpl<E> implements List<E> {
         return this.size;
     }
 
-    /**
-     * Método auxiliar para navegar hasta un nodo específico.
-     * Si pos es -1, devuelve el dummy node.
-     */
     private Node<E> getNodeAt(int pos) {
         Node<E> aux = dummy;
         for (int i = -1; i < pos; i++) {
@@ -85,7 +74,6 @@ public class ListImpl<E> implements List<E> {
         return new CIterator();
     }
 
-    // --- Clases Internas Encapsuladas [cite: 94] ---
 
     private static class Node<E> {
         E data;
