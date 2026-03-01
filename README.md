@@ -1,2 +1,2 @@
-#HOLA MUNDO este es el tercer commit hecho por Alvaro
+#Práctica realizada por Manel Borras, Alvaro Garcia y Juan Carlos Fernandez
 
