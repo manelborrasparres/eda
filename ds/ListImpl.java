@@ -1,4 +1,4 @@
-package ds;
+package EDA.ds;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
